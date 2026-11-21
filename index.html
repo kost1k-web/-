@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+<title>Для Саиды ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #fff5f7, #f8dce7);
+    color: #704454;
+    font-family: Georgia, serif;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    padding: 25px 18px 45px;
+    text-align: center;
+}
+
+.screen {
+    display: none;
+    animation: appear .7s ease;
+}
+
+.screen.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 37px;
+    font-weight: normal;
+    margin: 22px 0;
+    color: #92536c;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+button {
+    background: linear-gradient(135deg, #e99ab3, #c96e8c);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 15px;
+    margin: 15px 5px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #c96e8c33;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+.photo {
+    width: 100%;
+    border-radius: 18px;
+    margin: 15px 0;
+    box-shadow: 0 7px 20px #9e526d30;
+}
+
+.card {
+    background: #ffffffc9;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px #9e526d12;
+}
+
+.message {
+    color: #ae5e7c;
+    font-style: italic;
+    font-size: 19px;
+    margin: 25px 0;
+}
+
+.heart {
+    font-size: 43px;
+    color: #d77d9b;
+    background: none;
+    box-shadow: none;
+    padding: 8px;
+}
+
+.heart.done {
+    color: #b74670;
+    transform: scale(1.2);
+}
+
+#petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.petal {
+    position: absolute;
+    top: -30px;
+    color: #d982a0;
+    animation: fall 7s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(500deg);
+    }
+}
+
+.music {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 20;
+    font-size: 12px;
+    padding: 11px 15px;
+}
+
+.small {
+    color: #a77b8b;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="petals"></div>
+
+<button class="music" onclick="toggleMusic()" id="musicButton">
+    ♫ Включить музыку
+</button>
+
+<div class="container">
+
+<!-- ГЛАВНАЯ -->
+
+<section class="screen active" id="start">
+
+    <div style="font-size:65px;margin-top:65px;">🌙</div>
+
+    <p>Маленький сюрприз для Саиды</p>
+
+    <h1>Наша история ❤️</h1>
+
+    <p>
+        Я приготовил для тебя кое-что особенное.
+        Здесь спрятаны воспоминания,
+        которые очень дороги моему сердцу.
+    </p>
+
+    <p>
+        Готова немного окунуться в прошлое?
+    </p>
+
+    <button onclick="go('first')">
+        Начать путешествие ♡
+    </button>
+
+</section>
+
+
+<!-- ПЕРВАЯ ВСТРЕЧА -->
+
+<section class="screen" id="first">
+
+    <p>Глава первая</p>
+
+    <h1>Наша первая встреча</h1>
+
+    <img src="https://i.ibb.co.com/6RT6VNhx/photo1.jpg" class="photo">
+
+    <div class="card">
+
+        <p>
+            Я помню, как мы встретились впервые.
+            Это было незабываемо и очень волнительно.
+        </p>
+
+        <p>
+            Я немного стеснялся, переживал,
+            но всё прошло просто шикарно.
+        </p>
+
+        <p class="message">
+            Если бы можно было вернуться
+            в тот день, я бы снова выбрал эту встречу.
+        </p>
+
+    </div>
+
+    <button onclick="go('second')">
+        Следующее воспоминание →
+    </button>
+
+</section>
+
+
+<!-- ДЕНЬ РОЖДЕНИЯ САИДЫ -->
+
+<section class="screen" id="second">
+
+    <p>Глава вторая</p>
+
+    <h1>Твой день рождения</h1>
+
+    <img src="https://i.ibb.co.com/BHw43ZDC/photo2-jpg.jpg" class="photo">
+
+    <div class="card">
+
+        <p>
+            Я так старался приехать к тебе на сбор,
+            чтобы сделать сюрприз.
+        </p>
+
+        <p>
+            Мне очень хотелось порадовать тебя.
+            И вроде всё получилось.
+        </p>
+
+        <p>
+            Я помню, как был счастлив видеть
+            твою улыбку в тот момент.
+        </p>
+
+        <p class="message">
+            Мне хотелось подарить тебе
+            целый мир. ❤️
+        </p>
+
+    </div>
+
+    <button onclick="go('third')">
+        Дальше →
+    </button>
+
+</section>
+
+
+<!-- МОЙ ДЕНЬ РОЖДЕНИЯ -->
+
+<section class="screen" id="third">
+
+    <p>Глава третья</p>
+
+    <h1>Мой день рождения</h1>
+
+    <img src="https://i.ibb.co.com/jZ9SFyM8/photo3-jpg.jpg" class="photo">
+
+    <div class="card">
+
+        <p>
+            Когда ты приехала на мой день рождения,
+            я был просто самым счастливым человеком
+            на свете.
+        </p>
+
+        <p>
+            У меня такого никогда раньше не было.
+            Я так тебе благодарен за этот день.
+        </p>
+
+        <p class="message">
+            Ты сделала его незабываемым.
+        </p>
+
+    </div>
+
+    <button onclick="go('gallery')">
+        Ещё немного воспоминаний →
+    </button>
+
+</section>
+
+
+<!-- ФОТОГАЛЕРЕЯ -->
+
+<section class="screen" id="gallery">
+
+    <p>Глава четвёртая</p>
+
+    <h1>Это тоже мы ❤️</h1>
+
+    <p>
+        Иногда самые дорогие моменты —
+        это просто время, проведённое вместе.
+    </p>
+
+    <div class="card">
+        <img src="https://i.ibb.co.com/1YrW1kq2/photo4-jpg.jpg" class="photo">
+        <p>Наши маленькие моменты.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://i.ibb.co.com/4RrnXGFd/photo5-jpg.jpg" class="photo">
+        <p>Наши улыбки и глупости.</p>
+    </div>
+
+    <div class="card">
+        <img src="https://i.ibb.co.com/rRbcqM3m/photo6-jpg.jpg" class="photo">
+        <p>Воспоминания, которые я храню.</p>
+    </div>
+
+    <button onclick="go('quest')">
+        Перейти к сюрпризу →
+    </button>
+
+</section>
+
+
+<!-- КВЕСТ -->
+
+<section class="screen" id="quest">
+
+    <p>Глава пятая</p>
+
+    <h1>Маленькое испытание 💗</h1>
+
+    <p>
+        Я спрятал здесь четыре сердечка.
+        Найди их все, чтобы открыть
+        последнее послание.
+    </p>
+
+    <div id="heartBox">
+
+        <button class="heart" onclick="collect(this)">♡</button>
+        <button class="heart" onclick="collect(this)">♡</button>
+        <button class="heart" onclick="collect(this)">♡</button>
+        <button class="heart" onclick="collect(this)">♡</button>
+
+    </div>
+
+    <p id="counter">Найдено: 0 из 4</p>
+
+    <button id="finalButton"
+            style="display:none;"
+            onclick="go('final')">
+        Открыть письмо ❤️
+    </button>
+
+</section>
+
+
+<!-- ФИНАЛЬНОЕ ПИСЬМО -->
+
+<section class="screen" id="final">
+
+    <div style="font-size:65px;">💗</div>
+
+    <p>Последняя глава</p>
+
+    <h1>Саида, прости меня...</h1>
+
+    <img src="https://i.ibb.co.com/s9tPhh6d/photo7.jpg" class="photo">
+
+    <div class="card">
+
+        <p>
+            Любимая, прости меня за все недопонимания
+            и за те моменты, когда я причинял тебе боль.
+        </p>
+
+        <p>
+            Ты мне очень-очень важна.
+            Я тебя люблю и очень скучаю.
+        </p>
+
+        <p>
+            Я хотел бы всё исправить.
+            Я понимаю, что одних слов недостаточно,
+            и хочу показывать своими поступками,
+            что действительно меняюсь.
+        </p>
+
+        <p>
+            Ты для меня не просто человек.
+            Ты занимаешь огромное место в моём сердце.
+        </p>
+
+        <p>
+            Я не хочу торопить тебя или требовать ответа.
+            Но если однажды ты тоже этого захочешь,
+            я бы очень хотел попробовать начать всё сначала.
+        </p>
+
+        <p class="message">
+            Я люблю тебя, Саида.
+            Спасибо за нашу историю. ❤️
+        </p>
+
+    </div>
+
+    <p class="small">
+        Сделано с любовью специально для тебя.
+    </p>
+
+    <button onclick="restart()">
+        Пройти ещё раз ♡
+    </button>
+
+</section>
+
+</div>
+
+
+<script>
+
+// ПЕРЕКЛЮЧЕНИЕ ЭКРАНОВ
+
+function go(id) {
+
+    document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    if (id === 'final') {
+        createPetals();
+    }
+}
+
+
+// ИГРА С СЕРДЕЧКАМИ
+
+let found = 0;
+
+function collect(button) {
+
+    if (button.classList.contains('done')) return;
+
+    button.classList.add('done');
+    button.textContent = '♥';
+
+    found++;
+
+    document.getElementById('counter').textContent =
+        'Найдено: ' + found + ' из 4';
+
+    if (found === 4) {
+
+        document.getElementById('finalButton').style.display =
+            'inline-block';
+
+    }
+}
+
+
+// ПАДАЮЩИЕ ЛЕПЕСТКИ
+
+function createPetals() {
+
+    for (let i = 0; i < 25; i++) {
+
+        let petal = document.createElement('div');
+
+        petal.className = 'petal';
+        petal.textContent = ['🌸', '♡', '✿'][i % 3];
+
+        petal.style.left = Math.random() * 100 + '%';
+        petal.style.animationDuration =
+            (4 + Math.random() * 5) + 's';
+
+        petal.style.fontSize =
+            (15 + Math.random() * 15) + 'px';
+
+        document.getElementById('petals').appendChild(petal);
+
+        setTimeout(() => petal.remove(), 10000);
+
+    }
+
+}
+
+
+// ФОНОВАЯ МЕЛОДИЯ
+
+let audio;
+let musicPlaying = false;
+let melodyTimer;
+
+function toggleMusic() {
+
+    const button = document.getElementById('musicButton');
+
+    if (musicPlaying) {
+
+        clearInterval(melodyTimer);
+        musicPlaying = false;
+        button.textContent = '♫ Включить музыку';
+
+        return;
+    }
+
+    try {
+
+        audio = audio || new AudioContext();
+        audio.resume();
+
+        musicPlaying = true;
+        button.textContent = '♫ Выключить музыку';
+
+        const notes = [
+            523, 659, 784, 659,
+            587, 698, 880, 698
+        ];
+
+        let index = 0;
+
+        function playNote() {
+
+            if (!musicPlaying) return;
+
+            const oscillator = audio.createOscillator();
+            const volume = audio.createGain();
+
+            oscillator.type = 'sine';
+            oscillator.frequency.value =
+                notes[index % notes.length];
+
+            volume.gain.setValueAtTime(
+                0.001, audio.currentTime
+            );
+
+            volume.gain.linearRampToValueAtTime(
+                0.04, audio.currentTime + 0.1
+            );
+
+            volume.gain.exponentialRampToValueAtTime(
+                0.001, audio.currentTime + 0.5
+            );
+
+            oscillator.connect(volume);
+            volume.connect(audio.destination);
+
+            oscillator.start();
+            oscillator.stop(audio.currentTime + 0.5);
+
+            index++;
+
+        }
+
+        playNote();
+        melodyTimer = setInterval(playNote, 550);
+
+    } catch (error) {
+
+        button.textContent = 'Музыка недоступна';
+
+    }
+
+}
+
+
+// ПЕРЕЗАПУСК
+
+function restart() {
+
+    found = 0;
+
+    document.querySelectorAll('.heart').forEach(button => {
+
+        button.classList.remove('done');
+        button.textContent = '♡';
+
+    });
+
+    document.getElementById('counter').textContent =
+        'Найдено: 0 из 4';
+
+    document.getElementById('finalButton').style.display =
+        'none';
+
+    go('start');
+
+}
+
+</script>
+
+</body>
+</html>
